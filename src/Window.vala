@@ -1,20 +1,20 @@
 /*
-* Copyright (c) 2018 Alecaddd (http://alecaddd.com)
+* Copyright (c) 2019 Alecaddd (http://alecaddd.com)
 *
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU General Public
-* License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
+* This file is part of Akira.
 *
-* This program is distributed in the hope that it will be useful,
+* Akira is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+
+* Akira is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License
+* along with Akira.  If not, see <https://www.gnu.org/licenses/>.
 *
 * Authored by: Alessandro "Alecaddd" Castellani <castellani.ale@gmail.com>
 */
@@ -38,7 +38,7 @@ public class Akira.Window : Gtk.ApplicationWindow {
 		Object (
 			application: akira_app,
 			app: akira_app,
-			icon_name: "com.github.alecaddd.akira"
+			icon_name: "com.github.akiraux.akira"
 		);
 	}
 
@@ -74,7 +74,7 @@ public class Akira.Window : Gtk.ApplicationWindow {
 		Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = settings.dark_theme;
 
 		var css_provider = new Gtk.CssProvider ();
-		css_provider.load_from_resource ("/com/github/alecaddd/akira/stylesheet.css");
+		css_provider.load_from_resource ("/com/github/akiraux/akira/stylesheet.css");
 		
 		Gtk.StyleContext.add_provider_for_screen (
 			Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
@@ -123,7 +123,7 @@ public class Akira.Window : Gtk.ApplicationWindow {
         settings.pos_y = y;
         settings.window_width = width;
 		settings.window_height = height;
-		settings.right_paned = main_window.right_sidebar.get_allocated_width ();
+		settings.right_paned = main_window.main_canvas.get_allocated_width ();
 		settings.left_paned = main_window.left_sidebar.get_allocated_width ();
 	}
 
